@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import static com.sun.org.apache.regexp.internal.RETest.test;
+import static jdk.nashorn.internal.objects.NativeRegExp.test;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,38 +19,18 @@ import static org.junit.Assert.*;
  */
 public class HelloWorldUnit {
     
-    public HelloWorldUnit() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-        String hi = "Hello World";
-        String hello = "Hello World";
-        assertTrue(hi == hello);
+    @Test
+    public void testNumbers() {
         
         int first = 5;
         int second = 5;
-        int third = 6;
         
         assertEquals(first, second);
-        assertEquals(first, third);
+        //assertEquals(first, third);
     }
-    
-    @AfterClass
-    public static void tearDownClass() {
+    @Test
+    public void testOtherNumbers() {
+        int first = 5;
+        assertEquals (first, 6);
     }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
